@@ -5,36 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* 전체선택자 */
+        *{
+            color:black;
+        }
+        /* 태그선택자 */
+        h1{
+            color:black;
+        }
+        /* 클래스선택자 */
+        .under_hr{
+            color:blueviolet
+        }
+        /* ID선택자 */
+        #today_title{
+            color:red;
+        }
+        /* 일치선택자 */
+        li.first_li{
+            color:orange;
+        }
+        /* 직계 자손선택자 */
+        ul > .second_li{
+            color:yellow;
+        }
+        /* 후손선택자 */
+        div .todo{
+            color:green;
+        }
+        /* 인접형제선택자 */
+        .sat+li {
+            color: violet;
+        }
+        /* 일반 형제 선택자 */
+        .sat~li{
+            font-weight: bold;
+        }
+        /* img hover시 크기커짐 */
+        img:hover{
+            width: 500px;
+        }
+        /* a태그 active시  폰트가 커지고 색깔 변경 ,네이버지도검색 */
+        a:active{
+            font-weight: bold;
+            color:red;
+        }
+        input:focus{
+            background-color:orange;
+        }
+        /* first,last,nth,not 선택자 */
+        .first_ol li:first-child{
+            color:red;
+        }
+        .first_ol li:last-child{
+            color:violet;
+        }
+        .first_ol *:nth-child(2){
+            background-color: yellow;
+        }
+        .first_ul *:not(.red){
+            background-color:brown;
+        }
+        .first_ul *:not(.brown){
+            background-color:red;
+        }
+        /* 가상요소선택자 */
+        .end:hover::after{
+            content:"하 힘들다";
+        }
+        [type="password"]{
+            background-color: gray;
+            
+        }
+
+    </style>
 </head>
 <body>
-    <h1>TODAY STUDY</h1>
+    <h1 class="title">TODAY STUDY</h1>
     <img src="https://t1.daumcdn.net/cfile/tistory/214409335238F8102C" alt="">
     <h2>장소: 한빛빌딩 A동 2층 강의실 20</h2>
     <h3>일시: 13:00~19:00</h3>
     <hr/>
-    <i>오늘은 html,tag,git에 대해서 공부!!</i>
+    <i class="under_hr">오늘은 html,tag,git에 대해서 공부!!</i>
     <br/>
     <pre><strong>오늘의숙제</strong>:
         <br/>
         <em>마감 : 6/16(목) 20시</em>
         <br/>
-        <ol>
+        <ol class="first_ol">
             <li>금일 배운 HTML 태그를 전부 사용하여 자신이 원하는 HTML 문서 만들기</li>
             <li>깃허브에 임의의 Repository를 Public으로 만들기</li>
             <li>1의 HTML 파일을 3에서 만든 깃허브 Repository에 Push 하기</li>
             <li>해당 Repository 의 주소를 강사에게 DM으로 보내기</li>
         </ol>
-        <ul>
-            <li>해당 작업은 Terminal, Git bash, Vscode, Github Desktop 등등 편하신 방법으로 완료 하시면 됩니다.</li>
-            <li> Push 후, Github repository 의 주소만 강사에게 DM으로 보내주세요.</li>
-            <li> 제가 오늘 급히 설명하느라 개념 및 사용 방법에 대해서 자세히 설명을 못 드렸는데,</li>
-            <li>깃허브에 푸쉬하는 방법은 강의 자료 또는 유튜브, 인터넷 게시글을 참고하여 올려주세요.</li>
+        <ul class="first_ul">
+            <li class="red">해당 작업은 Terminal, Git bash, Vscode, Github Desktop 등등 편하신 방법으로 완료 하시면 됩니다.</li>
+            <li class="red"> Push 후, Github repository 의 주소만 강사에게 DM으로 보내주세요.</li>
+            <li class="red"> 제가 오늘 급히 설명하느라 개념 및 사용 방법에 대해서 자세히 설명을 못 드렸는데,</li>
+            <li class="brown">깃허브에 푸쉬하는 방법은 강의 자료 또는 유튜브, 인터넷 게시글을 참고하여 올려주세요.</li>
         </ul>
         <hr/>
         
 
     </pre>
-    <b>NIKE 신발 응모</b>
+    <b class="under_hr">NIKE 신발 응모</b>
     <table border="1">
         <tr>
             <th>날짜</th>
@@ -60,16 +135,40 @@
     </table>
 
     <br/>
-    <u>6월 17일 강의변경사항</u>
+    <hr/>
+    <u class="under_hr">6월 17일 강의변경사항</u>
     <br/>
     <b>★장소변경★</b>
     <pre>
     <del>한빛빌딩 A동 2층 강의실 20</del> 에서 
     주소 : 서울 서대문구 연세로5가길 1 범서빌딩 6층
     신촌 시간 공방 R2 + R3
+    <br>
     <a href="https://map.naver.com/v5/entry/place/37662763?c=14130462.8279163,4517038.7872122,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt"
     target="_blank">네이버지도 검색</a>
     </pre>
+    
+    <div>
+        <h2 id="today_title">6월 17일 STUDY</h2>
+        <ul class="today_list">
+            <li class="first_li">input태그</li>
+            <li class="second_li">CSS 선택자</li>
+            <li class="todo">GIT</li>
+            <li class="todo">Homework</li>
+            <li class="sat">숙제하기</li>
+            <li>집청소</li>
+            <li>장보기</li>
+            
+        </ul>
+
+        
+    </div>
+    <input type="text" placeholder="focus연습">
+
+    <h6 class="end">숙제</h6>
+    <br>
+    <input type="text" placeholder="ID">
+    <input type="password" placeholder="password">
     
 
     
